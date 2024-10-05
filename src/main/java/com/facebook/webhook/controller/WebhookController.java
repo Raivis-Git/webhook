@@ -46,7 +46,7 @@ public class WebhookController {
         LOGGER.info("webhook POST");
         LOGGER.info(receivedData.toString());
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("EVENT_RECEIVED");
     }
 
 }
