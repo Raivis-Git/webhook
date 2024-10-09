@@ -2,9 +2,7 @@ package com.facebook.webhook.controller;
 
 import com.facebook.webhook.config.ConfigLoader;
 import com.restfb.*;
-import com.restfb.types.send.IdMessageRecipient;
-import com.restfb.types.send.Message;
-import com.restfb.types.send.SendResponse;
+import com.restfb.types.send.*;
 import com.restfb.types.webhook.WebhookEntry;
 import com.restfb.types.webhook.WebhookObject;
 import com.restfb.types.webhook.messaging.MessagingItem;
@@ -65,8 +63,20 @@ public class WebhookController {
                     String senderId = item.getSender().getId();
                     String receivedMessage = item.getMessage().getText();
 
-                    // Respond with a simple message
-                    sendTextMessage(senderId, "You said: " + receivedMessage);
+                    if (item.getPostback() != null) {
+                        String payload = item.getPostback().getPayload();
+                        System.out.println("Postback received with payload: " + payload);
+
+                        // Respond based on payload
+                        if ("GET_STARTED_PAYLOAD".equals(payload)) {
+                            sendTextMessage(senderId, "Welcome! How can I help you?");
+                        } else if ("MORE_INFO_PAYLOAD".equals(payload)) {
+                            sendTextMessage(senderId, "Here's more information about our services...");
+                        }
+                    } else {
+                        // Respond with a simple message
+                        sendTextMessage(senderId, "You said: " + receivedMessage);
+                    }
                 }
             }
         }
@@ -83,6 +93,35 @@ public class WebhookController {
         Message message = new Message(messageText);
 
         // Send the message using the publish method
+        SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
+                Parameter.with("recipient", recipient),
+                Parameter.with("message", message));
+
+        System.out.println("Message sent with ID: " + response.getMessageId());
+    }
+
+    public void sendButtonTemplate(String recipientId) {
+        FacebookClient facebookClient = new DefaultFacebookClient("your_page_access_token", Version.LATEST);
+
+        // Create recipient
+        IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
+
+        // Create buttons
+        PostbackButton button1 = new PostbackButton("Get Started", "GET_STARTED_PAYLOAD");
+        PostbackButton button2 = new PostbackButton("More Info", "MORE_INFO_PAYLOAD");
+
+        // Create button template payload
+        ButtonTemplatePayload buttonPayload = new ButtonTemplatePayload("Choose an option:");
+        buttonPayload.addButton(button1);
+        buttonPayload.addButton(button2);
+
+        // Wrap the button template in a TemplateAttachment
+        TemplateAttachment templateAttachment = new TemplateAttachment(buttonPayload);
+
+        // Create a message with the button template
+        Message message = new Message(templateAttachment);
+
+        // Send the message
         SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
                 Parameter.with("recipient", recipient),
                 Parameter.with("message", message));
