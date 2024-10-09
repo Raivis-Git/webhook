@@ -52,7 +52,7 @@ public class WebhookController {
 
     }
 
-    @PostMapping("/webhook") // Process messages from Facebook
+    @PostMapping // Process messages from Facebook
     public void processMessage(@RequestBody String requestBody) {
         LOGGER.info("POST /webhook received \n" + requestBody);
         // Parse the message using RestFB
