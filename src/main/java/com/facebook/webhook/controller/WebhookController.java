@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
+
 
 @RestController
 @RequestMapping("api/facebook/webhook")
@@ -74,8 +76,11 @@ public class WebhookController {
                             sendTextMessage(senderId, "Here's more information about our services...");
                         }
                     } else {
-                        // Respond with a simple message
-                        sendTextMessage(senderId, "You said: " + receivedMessage);
+                        if ("buttons".equals(receivedMessage.trim().toLowerCase(Locale.ROOT)))
+                            sendButtonTemplate(senderId);
+                        else
+                            // Respond with a simple message
+                            sendTextMessage(senderId, "You said: " + receivedMessage);
                     }
                 }
             }
