@@ -53,7 +53,7 @@ public class WebhookController {
     }
 
     @PostMapping // Process messages from Facebook
-    public void processMessage(@RequestBody String requestBody) {
+    public ResponseEntity<?> processMessage(@RequestBody String requestBody) {
         LOGGER.info("POST /webhook received \n" + requestBody);
         // Parse the message using RestFB
         JsonMapper jsonMapper = new DefaultJsonMapper();
@@ -75,6 +75,7 @@ public class WebhookController {
                         } else if ("MORE_INFO_PAYLOAD".equals(payload)) {
                             sendTextMessage(senderId, "Here's more information about our services...");
                         }
+
                     } else {
                         if ("buttons".equals(receivedMessage.trim().toLowerCase(Locale.ROOT)))
                             sendButtonTemplate(senderId);
@@ -85,6 +86,8 @@ public class WebhookController {
                 }
             }
         }
+        // Always return a 200 status code to prevent retries
+        return ResponseEntity.ok().build();
     }
 
     // Method to send message using RestFB
@@ -98,11 +101,16 @@ public class WebhookController {
         Message message = new Message(messageText);
 
         // Send the message using the publish method
-        SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
-                Parameter.with("recipient", recipient),
-                Parameter.with("message", message));
+        try {
+            SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
+                    Parameter.with("recipient", recipient),
+                    Parameter.with("message", message));
 
-        System.out.println("Message sent with ID: " + response.getMessageId());
+            System.out.println("Message sent with ID: " + response.getMessageId());
+        } catch (Exception e) {
+            LOGGER.error("Message couldn't be sent");
+            LOGGER.error(e.getMessage());
+        }
     }
 
     public void sendButtonTemplate(String recipientId) {
