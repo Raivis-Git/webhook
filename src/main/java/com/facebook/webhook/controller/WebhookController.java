@@ -106,7 +106,7 @@ public class WebhookController {
     }
 
     public void sendButtonTemplate(String recipientId) {
-        FacebookClient facebookClient = new DefaultFacebookClient("your_page_access_token", Version.LATEST);
+        FacebookClient facebookClient = new DefaultFacebookClient(pageAccessToken, Version.LATEST);
 
         // Create recipient
         IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
