@@ -107,11 +107,12 @@ public class FacebookMessageService {
 //                message.add("quick_replies", quickReplies);
 //            }
 
+            MessageTemplate template1 = template.get(0);
             // Send message
             facebookClient.publish(recipientId + "/messages",
                     SendResponse.class,
-//                    Parameter.with("recipient", new JsonObject().add("id", recipientId)),
-                    Parameter.with("message", template.get(0).getMessage()));
+                    Parameter.with("recipient", new JsonObject().add("id", template1.getPageId())),
+                    Parameter.with("message", template1.getMessage()));
 
         } catch (Exception e) {
             logger.error("Failed to send welcome message", e);

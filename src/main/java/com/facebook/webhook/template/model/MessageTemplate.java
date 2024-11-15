@@ -7,6 +7,8 @@ import java.util.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MessageTemplate {
+    @SerializedName("pageId")
+    private String pageId;
     @SerializedName("pageName")
     private String pageName;
     @SerializedName("message")
@@ -56,5 +58,13 @@ public class MessageTemplate {
 
     public void setGenericTemplateElements(List<GenericTemplateElement> genericTemplateElements) {
         this.genericTemplateElements = genericTemplateElements;
+    }
+
+    public String getPageId() {
+        return pageId;
+    }
+
+    public void setPageId(String pageId) {
+        this.pageId = pageId;
     }
 }
