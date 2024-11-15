@@ -17,8 +17,8 @@ public class TemplateManager {
     Logger logger = LoggerFactory.getLogger(TemplateManager.class);
 
     public TemplateManager() {
-        List<MessageTemplate> messageTemplate = getMessageTemplate();
-        System.out.println(messageTemplate);
+//        List<MessageTemplate> messageTemplate = getMessageTemplate();
+//        System.out.println(messageTemplate);
     }
 
     public String loadJsonTemplate(String fileName) {

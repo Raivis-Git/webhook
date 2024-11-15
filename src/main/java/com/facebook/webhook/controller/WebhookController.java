@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/facebook/webhook")
 public class WebhookController {
 
-    Logger LOGGER = LoggerFactory.getLogger(WebhookController.class);
+    Logger logger = LoggerFactory.getLogger(WebhookController.class);
 
     @Value("${facebook.verify.token}")
     private String verifyToken;
@@ -38,10 +38,10 @@ public class WebhookController {
                                               @RequestParam("hub.challenge") String challenge,
                                               @RequestParam("hub.mode") String mode) {
 
-        LOGGER.info("webhook GET received from");
+        logger.info("webhook GET received from");
 
         if ("subscribe".equals(mode) && configLoader.getVerifyToken().equals(verifyToken)) {
-            LOGGER.info("webhook VERIFIED");
+            logger.info("webhook VERIFIED");
             return ResponseEntity.ok(challenge);
         } else
             return ResponseEntity.status(403).build();
@@ -50,7 +50,7 @@ public class WebhookController {
 
     @PostMapping // Process messages from Facebook
     public ResponseEntity<?> processMessage(@RequestBody String requestBody) {
-        LOGGER.info("POST /webhook received \n" + requestBody);
+        logger.info("POST /webhook received \n" + requestBody);
 
         facebookService.processIncomingMessage(requestBody);
 
