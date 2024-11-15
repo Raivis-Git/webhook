@@ -1,16 +1,20 @@
 package com.facebook.webhook.controller;
 
+import com.facebook.webhook.service.*;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("api/facebook/send/")
 public class MainController {
 
-    @GetMapping
-    public ResponseEntity<?> test() {
+    @Autowired
+    public FacebookMessageService facebookMessageService;
+
+    @GetMapping("/{recipientId}")
+    public ResponseEntity<?> sendMessageFromTemplate(@PathVariable String recipientId) {
+        facebookMessageService.sendWelcomeMessage(recipientId);
         return ResponseEntity.ok("Welcome to nuke 55");
     }
 
