@@ -1,0 +1,79 @@
+{
+  "pageName": "Rīgas Meistars",
+  "message": "Esat sveicināti !\nLaipni lūdzam Rīgas Meistara Facebook lapā. Kā mēs varētu Jums palīdzēt ?\n",
+  "buttons": [
+    {
+      "type": "postback",
+      "title": "View Catalog",
+      "payload": "VIEW_CATALOG"
+    },
+    {
+      "type": "web_url",
+      "title": "Visit Website",
+      "url": "https://www.myshop.com"
+    },
+    {
+      "type": "postback",
+      "title": "Contact Support",
+      "payload": "CONTACT_SUPPORT"
+    }
+  ],
+  "quickReplies": [
+    {
+      "title": "Informācija par uzņēmumu",
+      "payload": "ABOUT_COMPANY"
+    },
+    {
+      "title": "Informācija par mūsu pakalpojumiem",
+      "payload": "ABOUT_SERVICES"
+    },
+    {
+      "title": "Pieteikties uz konsultāciju ar meistaru",
+      "payload": "APPLY_FOR_CONSULT"
+    },
+    {
+      "title": "Sazināties ar klientu apkalpošanas komandu",
+      "payload": "CONTACT_SUPPORT"
+    },
+    {
+      "title": "Cits jautājums",
+      "payload": "OTHER_QUESTION"
+    }
+  ],
+  "genericTemplateElements": [
+    {
+      "title": "Summer Collection",
+      "subtitle": "Check out our new summer styles",
+      "imageUrl": "https://myshop.com/images/summer-collection.jpg",
+      "buttons": [
+        {
+          "type": "postback",
+          "title": "View Collection",
+          "payload": "VIEW_SUMMER_COLLECTION"
+        },
+        {
+          "type": "web_url",
+          "title": "Share",
+          "url": "https://myshop.com/share/summer-collection"
+        }
+      ]
+    },
+    {
+      "title": "Special Offers",
+      "subtitle": "Limited time discounts on selected items",
+      "imageUrl": "https://myshop.com/images/special-offers.jpg",
+      "buttons": [
+        {
+          "type": "postback",
+          "title": "See Offers",
+          "payload": "VIEW_SPECIAL_OFFERS"
+        },
+        {
+          "type": "postback",
+          "title": "Notify Me",
+          "payload": "NOTIFY_SPECIAL_OFFERS"
+        }
+      ]
+    }
+  ]
+}

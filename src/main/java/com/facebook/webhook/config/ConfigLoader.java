@@ -36,6 +36,6 @@ public class ConfigLoader {
     }
 
     public String getVerifyToken() {
-        return this.getProperty("verify.token");
+        return this.getProperty("facebook.verify.token");
     }
 }
