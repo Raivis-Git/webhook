@@ -83,6 +83,7 @@ public class FacebookService {
         Message message = new Message(messageText);
         facebookClient.publish(recipientId + "/messages", JsonObject.class,
                 Parameter.with("message", message));
+        logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
     }
 
     private void sendTextAndButtonMessage(String recipientId, String messageText, String[] buttonLabels) {
