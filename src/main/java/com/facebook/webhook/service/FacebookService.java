@@ -95,6 +95,7 @@ public class FacebookService {
         message.addQuickReplies(quickReplies);
         facebookClient.publish(recipientId + "/messages", JsonObject.class,
                 Parameter.with("message", message));
+        logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
     }
 
     // Method to send message using RestFB
