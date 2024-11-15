@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/facebook/send/")
+@RequestMapping("/api/facebook/send")
 public class MainController {
 
     @Autowired
