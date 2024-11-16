@@ -1,6 +1,5 @@
 package com.facebook.webhook.controller;
 
-import com.facebook.webhook.config.ConfigLoader;
 import com.facebook.webhook.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +20,6 @@ public class WebhookController {
 
     @Value("${facebook.access.token}")
     private String accessToken;
-
-    @Autowired
-    ConfigLoader configLoader;
     @Autowired
     FacebookService facebookService;
 
@@ -34,13 +30,13 @@ public class WebhookController {
 
     @GetMapping
     public ResponseEntity<?> webhookSubscribe(@RequestBody String requestBody,
-                                              @RequestParam("hub.verify_token") String verifyToken,
+                                              @RequestParam("hub.verify_token") String receivedVerifyToken,
                                               @RequestParam("hub.challenge") String challenge,
                                               @RequestParam("hub.mode") String mode) {
 
         logger.info("webhook GET received from");
 
-        if ("subscribe".equals(mode) && configLoader.getVerifyToken().equals(verifyToken)) {
+        if ("subscribe".equals(mode) && verifyToken.equals(receivedVerifyToken)) {
             logger.info("webhook VERIFIED");
             return ResponseEntity.ok(challenge);
         } else
