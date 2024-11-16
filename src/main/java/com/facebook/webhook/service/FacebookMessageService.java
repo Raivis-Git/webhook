@@ -2,9 +2,7 @@ package com.facebook.webhook.service;
 
 import com.facebook.webhook.template.*;
 import com.facebook.webhook.template.model.*;
-import com.facebook.webhook.template.model.QuickReply;
 import com.restfb.*;
-import com.restfb.json.*;
 import com.restfb.types.send.*;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.*;
@@ -107,12 +105,25 @@ public class FacebookMessageService {
 //                message.add("quick_replies", quickReplies);
 //            }
 
+            // Create a recipient with the recipient's ID
+            IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
+
             MessageTemplate template1 = template.get(0);
+
+            // Create a message with the text you want to send
+            Message message = new Message(template1.getMessage());
+            message.addQuickReplies(template1.getQuickReplies());
+
             // Send message
-            facebookClient.publish(recipientId + "/messages",
-                    SendResponse.class,
-                    Parameter.with("recipient", new JsonObject().add("id", template1.getPageId())),
-                    Parameter.with("message", template1.getMessage()));
+//            facebookClient.publish(recipientId + "/messages",
+//                    SendResponse.class,
+//                    Parameter.with("recipient", new JsonObject().add("id", template1.getPageId())),
+//                    Parameter.with("message", template1.getMessage()));
+
+            SendResponse response2 = facebookClient.publish("me/messages", SendResponse.class,
+                    Parameter.with("recipient", recipient),
+                    Parameter.with("message", message));
+            logger.info("Response2: " + response2.getResult());
 
         } catch (Exception e) {
             logger.error("Failed to send welcome message", e);

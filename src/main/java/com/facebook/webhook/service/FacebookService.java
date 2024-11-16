@@ -16,6 +16,8 @@ public class FacebookService {
 
     Logger logger = LoggerFactory.getLogger(FacebookService.class);
     private final FacebookClient facebookClient;
+    @Autowired
+    private FacebookMessageService facebookMessageService;
 
     @Autowired
     public FacebookService(FacebookClient facebookClient) {
@@ -90,6 +92,9 @@ public class FacebookService {
         SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
                 Parameter.with("recipient", recipient),
                 Parameter.with("message", message));
+        logger.info(response.getResult());
+
+        facebookMessageService.sendWelcomeMessage(recipientId);
 
 //        Message message = new Message(messageText);
 //        facebookClient.publish(recipientId + "/messages", JsonObject.class,

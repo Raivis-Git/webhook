@@ -2,6 +2,7 @@ package com.facebook.webhook.template.model;
 
 import com.fasterxml.jackson.annotation.*;
 import com.google.gson.annotations.*;
+import com.restfb.types.send.QuickReply;
 
 import java.util.*;
 
@@ -16,7 +17,7 @@ public class MessageTemplate {
     @SerializedName("buttons")
     private List<Button> buttons;
     @SerializedName("quickReplies")
-    private List<QuickReply> quickReplies;
+    private List<com.restfb.types.send.QuickReply> quickReplies;
     @SerializedName("genericTemplateElements")
     private List<GenericTemplateElement> genericTemplateElements;
 
@@ -44,7 +45,7 @@ public class MessageTemplate {
         this.buttons = buttons;
     }
 
-    public List<QuickReply> getQuickReplies() {
+    public List<com.restfb.types.send.QuickReply> getQuickReplies() {
         return quickReplies;
     }
 
