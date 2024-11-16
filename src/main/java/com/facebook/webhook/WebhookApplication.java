@@ -18,7 +18,8 @@ public class WebhookApplication {
 				.filename("application.env")
 				.ignoreIfMissing()
 				.load()
-				.entries();
+				.entries()
+				.forEach(e -> System.setProperty(e.getKey(), e.getValue()));
 	}
 
 }

@@ -3,7 +3,6 @@ package com.facebook.webhook.config;
 import io.github.cdimascio.dotenv.*;
 import jakarta.annotation.*;
 import org.slf4j.*;
-import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
