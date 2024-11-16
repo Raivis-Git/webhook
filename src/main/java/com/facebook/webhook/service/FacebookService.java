@@ -80,10 +80,21 @@ public class FacebookService {
     }
 
     private void sendTextMessage(String recipientId, String messageText) {
+        // Create a recipient with the recipient's ID
+        IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
+
+        // Create a message with the text you want to send
         Message message = new Message(messageText);
-        facebookClient.publish(recipientId + "/messages", JsonObject.class,
+
+        // Send the message using the publish method
+        SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
+                Parameter.with("recipient", recipient),
                 Parameter.with("message", message));
-        logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
+
+//        Message message = new Message(messageText);
+//        facebookClient.publish(recipientId + "/messages", JsonObject.class,
+//                Parameter.with("message", message));
+//        logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
     }
 
     private void sendTextAndButtonMessage(String recipientId, String messageText, String[] buttonLabels) {
