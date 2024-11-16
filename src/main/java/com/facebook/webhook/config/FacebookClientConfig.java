@@ -11,17 +11,10 @@ public class FacebookClientConfig {
     String accessToken;
     @Value("${facebook.app.secret}")
     private String appSecret;
-    @Value("${facebook.verify.token}")
-    private String verifyToken;
 
     @Bean
     public FacebookClient facebookClient() {
         return new DefaultFacebookClient(accessToken, appSecret, Version.LATEST);
-    }
-
-    // Getter for verify token (used in webhook verification)
-    public String getVerifyToken() {
-        return verifyToken;
     }
 
 }
