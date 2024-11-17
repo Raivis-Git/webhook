@@ -65,6 +65,9 @@ public class FacebookService {
     }
 
     private void handleCommand(String senderId, String command) {
+        if (!command.startsWith("/"))
+            return;
+
         // Handle different commands
         switch (command) {
             case "/help" ->
@@ -113,6 +116,8 @@ public class FacebookService {
         facebookClient.publish(recipientId + "/messages", JsonObject.class,
                 Parameter.with("message", message));
         logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
+
+        sendButtonTemplate1(recipientId);
     }
 
     // Method to send message using RestFB
