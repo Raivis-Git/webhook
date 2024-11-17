@@ -99,6 +99,8 @@ public class FacebookService {
 
         facebookMessageService.sendWelcomeMessage(recipientId);
 
+        sendButtonTemplate1(recipientId);
+
 //        Message message = new Message(messageText);
 //        facebookClient.publish(recipientId + "/messages", JsonObject.class,
 //                Parameter.with("message", message));
@@ -116,8 +118,6 @@ public class FacebookService {
         facebookClient.publish(recipientId + "/messages", JsonObject.class,
                 Parameter.with("message", message));
         logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
-
-        sendButtonTemplate1(recipientId);
     }
 
     // Method to send message using RestFB
