@@ -1,16 +1,21 @@
 package com.facebook.webhook.template.model;
 
 import com.fasterxml.jackson.annotation.*;
-import com.google.gson.annotations.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class QuickReply {
-    @SerializedName("content_type")
-    private String contentType;
+public class ButtonTemplate {
+    private String type;
     private String title;
     private String payload;
-    @SerializedName("image_url")
-    private String imageUrl;
+    private String url;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getTitle() {
         return title;
@@ -26,5 +31,13 @@ public class QuickReply {
 
     public void setPayload(String payload) {
         this.payload = payload;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

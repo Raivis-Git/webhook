@@ -3,6 +3,7 @@ package com.facebook.webhook.template.model;
 import com.fasterxml.jackson.annotation.*;
 import com.google.gson.annotations.*;
 import com.restfb.types.send.QuickReply;
+import com.restfb.types.whatsapp.platform.message.*;
 
 import java.util.*;
 
@@ -14,10 +15,16 @@ public class MessageTemplate {
     private String pageName;
     @SerializedName("message")
     private String message;
+    @SerializedName("messagingType")
+    private String messagingType;
+    @SerializedName("postback")
+    private String postback;
+    @SerializedName("buttonText")
+    private String buttonText;
     @SerializedName("buttons")
-    private List<Button> buttons;
+    private List<ButtonSend> buttons;
     @SerializedName("quickReplies")
-    private List<com.restfb.types.send.QuickReply> quickReplies;
+    private List<QuickReply> quickReplies;
     @SerializedName("genericTemplateElements")
     private List<GenericTemplateElement> genericTemplateElements;
 
@@ -37,15 +44,39 @@ public class MessageTemplate {
         this.message = message;
     }
 
-    public List<Button> getButtons() {
+    public String getMessagingType() {
+        return messagingType;
+    }
+
+    public void setMessagingType(String messagingType) {
+        this.messagingType = messagingType;
+    }
+
+    public String getPostback() {
+        return postback;
+    }
+
+    public void setPostback(String postback) {
+        this.postback = postback;
+    }
+
+    public String getButtonText() {
+        return buttonText;
+    }
+
+    public void setButtonText(String buttonText) {
+        this.buttonText = buttonText;
+    }
+
+    public List<ButtonSend> getButtons() {
         return buttons;
     }
 
-    public void setButtons(List<Button> buttons) {
+    public void setButtons(List<ButtonSend> buttons) {
         this.buttons = buttons;
     }
 
-    public List<com.restfb.types.send.QuickReply> getQuickReplies() {
+    public List<QuickReply> getQuickReplies() {
         return quickReplies;
     }
 

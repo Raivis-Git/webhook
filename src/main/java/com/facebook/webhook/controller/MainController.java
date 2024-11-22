@@ -14,7 +14,7 @@ public class MainController {
 
     @GetMapping("/{recipientId}")
     public ResponseEntity<?> sendMessageFromTemplate(@PathVariable String recipientId) {
-        facebookMessageService.sendWelcomeMessage(recipientId);
+        facebookMessageService.processAndSendMessage(null, recipientId);
         return ResponseEntity.ok("Welcome to nuke 55");
     }
 

@@ -2,7 +2,9 @@ package com.facebook.webhook.service;
 
 import com.restfb.*;
 import com.restfb.json.*;
+import com.restfb.types.*;
 import com.restfb.types.send.*;
+import com.restfb.types.send.Message;
 import com.restfb.types.webhook.*;
 import com.restfb.types.webhook.messaging.*;
 import org.slf4j.*;
@@ -31,17 +33,15 @@ public class FacebookService {
 
         for (WebhookEntry entry : webhookObject.getEntryList()) {
             for (MessagingItem item : entry.getMessaging()) {
-                if (item.getMessage() == null || item.getMessage().getText() == null)
-                    return;
                 String senderId = item.getSender().getId();
-                String receivedMessage = item.getMessage().getText();
-
-                if (sendPostBack(item, senderId))
+                if (sendPostBack(item, senderId) || item.getMessage() == null || item.getMessage().getText() == null)
                     continue;
+
+                String receivedMessage = item.getMessage().getText();
 
                 handleCommand(senderId, receivedMessage);
                 // Respond with a simple message
-                sendTextMessage(senderId, "You said: " + receivedMessage);
+//                sendTextMessage(senderId, "You said: " + receivedMessage);
             }
         }
     }
@@ -51,17 +51,9 @@ public class FacebookService {
             return false;
 
         String payload = messagingItem.getPostback().getPayload();
-        System.out.println("Postback received with payload: " + payload);
+        logger.info("Postback received with payload: " + payload);
 
-        //Respond based on payload
-        if ("GET_STARTED_PAYLOAD".equals(payload)) {
-            sendTextMessage(senderId, "Welcome! How can I help you?");
-            return true;
-        } else if ("MORE_INFO_PAYLOAD".equals(payload)) {
-            sendTextMessage(senderId, "Here's more information about our services...");
-            return true;
-        }
-        return false;
+        return facebookMessageService.processPostback(senderId, payload);
     }
 
     private void handleCommand(String senderId, String command) {
@@ -97,9 +89,9 @@ public class FacebookService {
                 Parameter.with("message", message));
         logger.info(response.getResult());
 
-        facebookMessageService.sendWelcomeMessage(recipientId);
+//        facebookMessageService.processAndSendMessage(recipientId);
 
-        sendButtonTemplate1(recipientId);
+//        testSendAll(recipientId);
 
 //        Message message = new Message(messageText);
 //        facebookClient.publish(recipientId + "/messages", JsonObject.class,
@@ -107,6 +99,88 @@ public class FacebookService {
 //        logger.info("Facebook API Request URL: {}", facebookClient.getWebRequestor().getDebugHeaderInfo().getDebug());
     }
 
+    private void testSendAll(String recipientId) {
+
+        FacebookType response = facebookClient.publish("me/messages", FacebookType.class,
+                Parameter.with("recipient", new JsonObject().add("id", recipientId)),
+                Parameter.with("message", new JsonObject()
+                        .add("attachment", new JsonObject()
+                                .add("type", "template")
+                                .add("payload", new JsonObject()
+                                        .add("template_type", "button")
+                                        .add("text", "Select an option")
+                                        .add("buttons", new JsonArray()
+                                                .add(new JsonObject()
+                                                        .add("type", "web_url")
+                                                        .add("url", "https://example.com")
+                                                        .add("title", "Visit Website")
+                                                )
+                                                .add(new JsonObject()
+                                                        .add("type", "postback")
+                                                        .add("title", "More Info")
+                                                        .add("payload", "CUSTOM_PAYLOAD")
+                                                )
+                                        )
+                                )
+                        )
+                        .add("quick_replies", new JsonArray()
+                                .add(new JsonObject()
+                                        .add("content_type", "text")
+                                        .add("title", "Option 1")
+                                        .add("payload", "OPTION1_PAYLOAD")
+                                )
+                                .add(new JsonObject()
+                                        .add("content_type", "text")
+                                        .add("title", "Option 2")
+                                        .add("payload", "OPTION2_PAYLOAD")
+                                )
+                        )
+                )
+        );
+        logger.info(response.toString());
+
+        facebookClient.publish("me/messages", FacebookType.class,
+                Parameter.with("recipient", new JsonObject().add("id", recipientId)),
+                Parameter.with("message", new JsonObject()
+                        .add("attachment", new JsonObject()
+                                .add("type", "template")
+                                .add("payload", new JsonObject()
+                                        .add("template_type", "generic")  // Use generic template instead of button
+                                        .add("elements", new JsonArray()
+                                                .add(new JsonObject()
+                                                        .add("title", "Your Title")
+                                                        .add("subtitle", "Your main text message here")
+                                                        .add("buttons", new JsonArray()
+                                                                .add(new JsonObject()
+                                                                        .add("type", "web_url")
+                                                                        .add("url", "https://example.com")
+                                                                        .add("title", "Visit Website")
+                                                                )
+                                                                .add(new JsonObject()
+                                                                        .add("type", "postback")
+                                                                        .add("title", "More Info")
+                                                                        .add("payload", "CUSTOM_PAYLOAD")
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                        .add("quick_replies", new JsonArray()
+                                .add(new JsonObject()
+                                        .add("content_type", "text")
+                                        .add("title", "Option 1")
+                                        .add("payload", "OPTION1_PAYLOAD")
+                                )
+                                .add(new JsonObject()
+                                        .add("content_type", "text")
+                                        .add("title", "Option 2")
+                                        .add("payload", "OPTION2_PAYLOAD")
+                                )
+                        )
+                )
+        );
+    }
     private void sendTextAndButtonMessage(String recipientId, String messageText, String[] buttonLabels) {
         Message message = new Message(messageText);
         List<QuickReply> quickReplies = new ArrayList<>();
@@ -139,32 +213,5 @@ public class FacebookService {
             logger.error("Message couldn't be sent");
             logger.error(e.getMessage());
         }
-    }
-
-    public void sendButtonTemplate1(String recipientId) {
-        // Create recipient
-        IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
-
-        // Create buttons
-        PostbackButton button1 = new PostbackButton("Get Started", "GET_STARTED_PAYLOAD");
-        PostbackButton button2 = new PostbackButton("More Info", "MORE_INFO_PAYLOAD");
-
-        // Create button template payload
-        ButtonTemplatePayload buttonPayload = new ButtonTemplatePayload("Choose an option:");
-        buttonPayload.addButton(button1);
-        buttonPayload.addButton(button2);
-
-        // Wrap the button template in a TemplateAttachment
-        TemplateAttachment templateAttachment = new TemplateAttachment(buttonPayload);
-
-        // Create a message with the button template
-        Message message = new Message(templateAttachment);
-
-        // Send the message
-        SendResponse response = facebookClient.publish("me/messages", SendResponse.class,
-                Parameter.with("recipient", recipient),
-                Parameter.with("message", message));
-
-        System.out.println("Message sent with ID: " + response.getMessageId());
     }
 }

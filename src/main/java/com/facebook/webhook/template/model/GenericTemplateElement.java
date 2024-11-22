@@ -9,7 +9,7 @@ public class GenericTemplateElement {
     private String title;
     private String subtitle;
     private String imageUrl;
-    private List<Button> buttons;
+    private List<ButtonTemplate> buttons;
 
     public String getTitle() {
         return title;
@@ -35,11 +35,11 @@ public class GenericTemplateElement {
         this.imageUrl = imageUrl;
     }
 
-    public List<Button> getButtons() {
+    public List<ButtonTemplate> getButtons() {
         return buttons;
     }
 
-    public void setButtons(List<Button> buttons) {
+    public void setButtons(List<ButtonTemplate> buttons) {
         this.buttons = buttons;
     }
 }

@@ -1,0 +1,727 @@
+[
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "START",
+    "message": "Esat sveicināti !\nLaipni lūdzam Rīgas Meistara Facebook lapā. Kā mēs varētu Jums palīdzēt ?\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "View Catalog",
+        "payload": "VIEW_CATALOG"
+      },
+      {
+        "type": "web_url",
+        "title": "Visit Website",
+        "url": "https://www.myshop.com"
+      },
+      {
+        "type": "postback",
+        "title": "Contact Support",
+        "payload": "CONTACT_SUPPORT"
+      }
+    ],
+    "quickReplies": [
+      {
+        "contentType": "text",
+        "title": "Informācija par uzņēmumu",
+        "payload": "ABOUT_COMPANY"
+      },
+      {
+        "contentType": "text",
+        "title": "Informācija par mūsu pakalpojumiem",
+        "payload": "ABOUT_SERVICES"
+      },
+      {
+        "contentType": "text",
+        "title": "Pieteikties uz konsultāciju ar meistaru",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "contentType": "text",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "contentType": "text",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      }
+    ],
+    "genericTemplateElements": [
+      {
+        "title": "Summer Collection",
+        "subtitle": "Check out our new summer styles",
+        "imageUrl": "https://myshop.com/images/summer-collection.jpg",
+        "buttons": [
+          {
+            "type": "postback",
+            "title": "View Collection",
+            "payload": "VIEW_SUMMER_COLLECTION"
+          },
+          {
+            "type": "web_url",
+            "title": "Share",
+            "url": "https://myshop.com/share/summer-collection"
+          }
+        ]
+      },
+      {
+        "title": "Special Offers",
+        "subtitle": "Limited time discounts on selected items",
+        "imageUrl": "https://myshop.com/images/special-offers.jpg",
+        "buttons": [
+          {
+            "type": "postback",
+            "title": "See Offers",
+            "payload": "VIEW_SPECIAL_OFFERS"
+          },
+          {
+            "type": "postback",
+            "title": "Notify Me",
+            "payload": "NOTIFY_SPECIAL_OFFERS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ABOUT_SERVICES",
+    "message": "Mēs esam profesionāla un uzticama meistaru komanda ar vairāk nekā 9 gadu pieredzi celtniecības jomā. Mūsu komanda darbojas Rīgā un Pierīgā, nodrošinot augstas kvalitātes remonta pakalpojumus.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Mūsu pakalpojumi",
+        "payload": "OUR_SERVICES"
+      },
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ABOUT_SERVICES",
+    "message": "Mēs piedāvajam sekojošos pakalpojumus:\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Kosmetiskais remonts",
+        "payload": "COSMETIC_REPAIR"
+      },
+      {
+        "type": "postback",
+        "title": "Kapitāls remonts",
+        "payload": "CAPITAL_REPAIR"
+      },
+      {
+        "type": "postback",
+        "title": "Renovācijas darbi",
+        "payload": "RENOVATION_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "Demontāžas darbi",
+        "payload": "DISMANTLING"
+      },
+      {
+        "type": "postback",
+        "title": "Flīzēšanas darbi",
+        "payload": "TILING_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "Santehnikas darbi",
+        "payload": "PLUMBING_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "Mājas siltināšanas darbi",
+        "payload": "HOUSE_WARMING_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "Jumtu remonts",
+        "payload": "ROOF_REPAIR"
+      },
+      {
+        "type": "postback",
+        "title": "Jumtu / noteku uzstādīšana",
+        "payload": "INSTALLATION_ROOF_GUTTERS"
+      },
+      {
+        "type": "postback",
+        "title": "Jumtu kausēšanas darbi",
+        "payload": "ROOF_MELTING_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "Koku terases izveide",
+        "payload": "ROOF_TERRACE"
+      },
+      {
+        "type": "postback",
+        "title": "Betonēšanas darbi",
+        "payload": "CONCRETING_WORKS"
+      },
+      {
+        "type": "postback",
+        "title": "U.c. (sazināties ar mūsu komandu)\n",
+        "payload": "OTHER_CONTACT_TEAM"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "COSMETIC_REPAIR",
+    "message": "Kosmētiskais remonts ir lielisks veids, kā atjaunot telpu izskatu bez būtiskas pārbūves. Tas ietver sienu krāsošanu, tapetes nomaiņu, griestu un grīdu apdares uzlabojumus. Šis remonta veids ir piemērots, ja nepieciešams ātri atsvaidzināt interjeru un padarīt telpu estētiski pievilcīgāku.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "CAPITAL_REPAIR",
+    "message": "Kapitālais remonts ir visaptverošs ēkas atjaunošanas process, kas ietver pilnīgu telpu pārbūvi, inženiertīklu nomaiņu, jaunu grīdu, sienu un griestu uzstādīšanu, kā arī logu un durvju maiņu. Mēs nodrošinām pilnu darbu ciklu, sākot no sākotnējās plānošanas līdz pabeigtai izpildei, izmantojot modernākos materiālus un tehnoloģijas, lai jūsu telpas atbilstu augstākajiem standartiem.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "RENOVATION_WORKS",
+    "message": "Renovācijas darbi palīdz atjaunot ēkas vai telpu funkcionalitāti, veicot būtiskus uzlabojumus, kas var ietvert gan konstrukcijas nostiprināšanu, gan inženiertīklu maiņu. Mēs piedāvājam renovācijas pakalpojumus, kas pielāgoti jūsu īpašuma vajadzībām, palīdzot atgriezt sākotnējo izskatu vai pat izveidot pilnīgi jaunu estētiku un komfortu.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "DISMANTLING",
+    "message": "Renovācijas darbi palīdz atjaunot ēkas vai telpu funkcionalitāti, veicot būtiskus uzlabojumus, kas var ietvert gan konstrukcijas nostiprināšanu, gan inženiertīklu maiņu. Mēs piedāvājam renovācijas pakalpojumus, kas pielāgoti jūsu īpašuma vajadzībām, palīdzot atgriezt sākotnējo izskatu vai pat izveidot pilnīgi jaunu estētiku un komfortu.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "TILING_WORKS",
+    "message": "Piedāvājam profesionālus flīzēšanas pakalpojumus grīdām, sienām un citām virsmām. Mēs strādājam ar dažāda veida flīzēm, lai nodrošinātu estētiski pievilcīgu un izturīgu apdari. Neatkarīgi no tā, vai tas ir vannas istabas, virtuves vai jebkuras citas telpas projekts, mēs garantējam augstas kvalitātes izpildi un precizitāti.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "PLUMBING_WORKS",
+    "message": "Mēs piedāvājam profesionālus santehnikas darbus, kas ietver gan uzstādīšanu, gan remontu un apkopi. Mēs strādājam ar augstas kvalitātes materiāliem un tehniku, nodrošinot drošību, izturību un uzticamību. Mūsu speciālisti veiks nepieciešamās pārbaudes un piedāvās labākos risinājumus, lai jūsu mājas vai uzņēmuma santehnika strādātu bez traucējumiem.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "HOUSE_WARMING_WORKS",
+    "message": "Piedāvājam profesionālus mājas siltināšanas pakalpojumus, kas palīdzēs samazināt enerģijas patēriņu un uzlabot jūsu mājokļa komfortu. Kvalitatīva siltināšana ne tikai saglabā siltumu ziemā, bet arī palīdz uzturēt patīkamu temperatūru vasarā, kā arī samazina apkures un dzesēšanas izmaksas.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ROOF_REPAIR",
+    "message": "Nodrošinām dažāda veida jumtu remontdarbus, tostarp seguma nomaiņu, jumta izolācijas uzlabošanu un bojājumu novēršanu. Mūsu speciālisti rūpīgi pārbaudīs jūsu jumta stāvokli un veiks nepieciešamos remontdarbus, lai nodrošinātu, ka jumts ir izturīgs pret nokrišņiem un citiem ārējiem faktoriem.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "INSTALLATION_ROOF_GUTTERS",
+    "message": "Mēs piedāvājam pilnu jumtu un noteku uzstādīšanas pakalpojumu klāstu. Neatkarīgi no tā, vai vēlaties pilnīgi jaunu jumtu vai esošā jumta atjaunošanu, mūsu komanda nodrošinās augstas kvalitātes uzstādīšanu. Mēs arī uzstādam notekas, lai nodrošinātu efektīvu ūdens novadīšanu un pasargātu jūsu ēku no mitruma bojājumiem.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ROOF_MELTING_WORKS",
+    "message": "Piedāvājam jumtu hidroizolācijas darbus, izmantojot kausēšanas tehniku, kas garantē izturību pret ūdens iekļūšanu. Izmantojam kvalitatīvus materiālus, lai nodrošinātu jumta hermētiskumu un aizsardzību pret laikapstākļu ietekmi. Šis risinājums ir ideāli piemērots plakanajiem un slīpajiem jumtiem.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ROOF_TERRACE",
+    "message": "Piedāvājam koka terases projektēšanu un izveidi, pielāgojot dizainu jūsu mājas vai dārza ainavai. Nodrošinām kvalitatīvus materiālus un precīzu montāžu, kas sniegs gan estētisku izskatu, gan ilgu kalpošanas laiku. Mūsu speciālisti rūpējas par katru detaļu, sākot no pamatu uzstādīšanas līdz pēdējās skrūves piestiprināšanai.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "CONCRETING_WORKS",
+    "message": "Mēs nodrošinām profesionālus betonēšanas darbus, sākot no pamatu ieliešanas līdz terasu un citu virsmu izveidei. Izmantojam augstas kvalitātes materiālus un modernu tehniku, lai garantētu izturību un ilgmūžību. Mūsu komanda ir pieredzējusi gan mazāku, gan lielāku projektu īstenošanā.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "OTHER_CONTACT_TEAM",
+    "message": "Citi pakalpojumi\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju\n",
+        "payload": "APPLY_FOR_CONSULT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      },
+      {
+        "type": "postback",
+        "title": "Atpakaļ",
+        "payload": "BACK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "OTHER_CONTACT_TEAM",
+    "message": "Pieteikties uz konsultāciju Jūs varat uzzvanot mums vai arī pierakstot mums Facebook vai Whatsapp.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties izmantojot Facebook",
+        "payload": "CONTACT_FACEBOOK"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "CONTACT_FACEBOOK",
+    "message": "Lūgums norādīts kāds pakalpojums Jums ir nepieciešams, telpu veidu, platību (ja ir zināma), Atrašanas vietu, Jūsu telefona numuru saziņai un papildus informāciju ja tāda ir nepieciešama.\n"
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "CONTACT_SUPPORT",
+    "message": "Sev interesējušo jautājumu Jums ir iespēja ierakstīt zemāk, vai arī izmantojot pogu “Mūsu kontakti” izvēloties sev ērtāko saziņas veidu.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "OTHER_QUESTION",
+    "message": "Sev interesējušo jautājumu Jums ir iespēja ierakstīt zemāk, vai arī izmantojot pogu “Mūsu kontakti” izvēloties sev ērtāko saziņas veidu.\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "OUR_CONTACTS",
+    "message": "Mūsu kontakti\n",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Mūsu kontakti",
+        "payload": "OUR_CONTACTS"
+      }
+    ]
+  }
+]

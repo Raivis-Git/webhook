@@ -6,6 +6,7 @@ import com.google.gson.reflect.*;
 import org.slf4j.*;
 import org.springframework.core.io.*;
 import org.springframework.stereotype.*;
+import org.springframework.util.*;
 
 import java.io.*;
 import java.nio.charset.*;
@@ -16,9 +17,9 @@ public class TemplateManager {
 
     Logger logger = LoggerFactory.getLogger(TemplateManager.class);
 
+    List<MessageTemplate> messageTemplateList = null;
+
     public TemplateManager() {
-//        List<MessageTemplate> messageTemplate = getMessageTemplate();
-//        System.out.println(messageTemplate);
     }
 
     public String loadJsonTemplate(String fileName) {
@@ -31,9 +32,15 @@ public class TemplateManager {
         }
     }
 
-    public List<MessageTemplate> getMessageTemplate() {
-        String jsonContent = loadJsonTemplate("example");
-        return new Gson().fromJson(jsonContent, new TypeToken<List<MessageTemplate>>(){}.getType());
+    public void updateMessageTemplate(String fileName) {
+        String jsonContent = loadJsonTemplate(fileName);
+        this.messageTemplateList = new Gson().fromJson(jsonContent, new TypeToken<List<MessageTemplate>>(){}.getType());
+    }
+
+    public List<MessageTemplate> getMessageTemplate(String fileName) {
+        if (CollectionUtils.isEmpty(this.messageTemplateList))
+            updateMessageTemplate(fileName);
+        return this.messageTemplateList;
     }
 
 }
