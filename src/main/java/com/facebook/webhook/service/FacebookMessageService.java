@@ -174,6 +174,14 @@ public class FacebookMessageService {
             genericTemplatePayload.addBubble(bubble);
     }
 
+    public void publishMessageToFacebook(String recipientId, String message) {
+        IdMessageRecipient recipient = new IdMessageRecipient(recipientId);
+
+        facebookClient.publish("me/messages", SendResponse.class,
+                Parameter.with("recipient", recipient),
+                Parameter.with("message", message));
+    }
+
     public void publishMessageToFacebook(IdMessageRecipient recipient, Message message) {
         facebookClient.publish("me/messages", SendResponse.class,
                 Parameter.with("recipient", recipient),

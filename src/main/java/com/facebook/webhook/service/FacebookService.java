@@ -62,12 +62,12 @@ public class FacebookService {
 
         // Handle different commands
         switch (command) {
+            case "/start" ->
+                    facebookMessageService.processPostback(senderId, "START");
             case "/help" ->
-                    sendTextMessage(senderId, "Here are the available commands:\n/help - Show this menu\n/info - Get more information");
-            case "/info" ->
-                    sendTextAndButtonMessage(senderId, "Here is some information about our chatbot:", new String[]{"More Details", "Contact Us"});
+                    facebookMessageService.publishMessageToFacebook(senderId, "Write /start to start the conversation");
             default ->
-                    sendTextMessage(senderId, "Sorry, I don't understand that command. Type /help to see the available commands.");
+                    facebookMessageService.publishMessageToFacebook(senderId, "Sorry, I don't understand that command. Type /help to see the available commands.");
         }
     }
 
@@ -181,6 +181,7 @@ public class FacebookService {
                 )
         );
     }
+
     private void sendTextAndButtonMessage(String recipientId, String messageText, String[] buttonLabels) {
         Message message = new Message(messageText);
         List<QuickReply> quickReplies = new ArrayList<>();
