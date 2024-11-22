@@ -4,6 +4,41 @@
     "pageName": "Rīgas Meistars",
     "messagingType": "REGULAR",
     "postback": "START",
+    "message": "Esat sveicināti !\nLaipni lūdzam Rīgas Meistara Facebook lapā. Kā mēs varētu Jums palīdzēt ?",
+    "buttonText": "Kas jūs interesē?",
+    "buttons": [
+      {
+        "type": "postback",
+        "title": "Informācija par uzņēmumu",
+        "payload": "ABOUT_COMPANY"
+      },
+      {
+        "type": "postback",
+        "title": "Informācija par mūsu pakalpojumiem ",
+        "payload": "ABOUT_SERVICES"
+      },
+      {
+        "type": "postback",
+        "title": "Pieteikties uz konsultāciju ar meistaru",
+        "payload": "CONTACT_SUPPORT"
+      },
+      {
+        "type": "postback",
+        "title": "Sazināties ar klientu apkalpošanas komandu",
+        "payload": "OUR_CONTACTS"
+      },
+      {
+        "type": "postback",
+        "title": "Cits jautājums",
+        "payload": "OTHER_QUESTION"
+      }
+    ]
+  },
+  {
+    "pageId": "430726710126075",
+    "pageName": "Rīgas Meistars",
+    "messagingType": "REGULAR",
+    "postback": "ABOUT_COMPANY",
     "message": "Mēs esam profesionāla un uzticama meistaru komanda ar vairāk nekā 9 gadu pieredzi celtniecības jomā. Mūsu komanda darbojas Rīgā un Pierīgā, nodrošinot augstas kvalitātes remonta pakalpojumus.\n",
     "buttonText": "Kas jūs interesē?",
     "buttons": [
