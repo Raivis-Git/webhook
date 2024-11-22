@@ -175,7 +175,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -210,7 +210,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -245,7 +245,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -280,7 +280,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -315,7 +315,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -350,7 +350,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -385,7 +385,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -420,7 +420,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -455,7 +455,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -490,7 +490,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -525,7 +525,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -560,7 +560,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
@@ -595,7 +595,7 @@
       {
         "type": "postback",
         "title": "Atpakaļ",
-        "payload": "BACK"
+        "payload": "ABOUT_SERVICES"
       }
     ]
   },
